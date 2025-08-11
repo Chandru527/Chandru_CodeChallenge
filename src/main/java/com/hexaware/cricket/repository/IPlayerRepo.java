@@ -7,5 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface IPlayerRepo extends JpaRepository<Player, Long> {
 	boolean existsByJerseyNumber(Integer jerseyNumber);
-
+	
+	
 }

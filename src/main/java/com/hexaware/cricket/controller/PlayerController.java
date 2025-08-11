@@ -2,7 +2,9 @@ package com.hexaware.cricket.controller;
 
 import com.hexaware.cricket.dto.PlayerDto;
 import com.hexaware.cricket.service.IPlayerService;
+
 import jakarta.validation.Valid;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,7 +27,7 @@ public class PlayerController {
 
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
-    public PlayerDto createPlayer(@RequestBody PlayerDto dto) {
+    public PlayerDto createPlayer(@Valid @RequestBody PlayerDto dto) {
         return service.createPlayer(dto);
     }
 
@@ -45,6 +47,7 @@ public class PlayerController {
         service.deletePlayer(playerId);
        
     }
+    
 
     
 }

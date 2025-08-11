@@ -11,5 +11,5 @@ public interface IPlayerService {
     PlayerDto updatePlayer(Long id, PlayerDto dto);
     void deletePlayer(Long id);
 
-   
+  
 }
