@@ -10,6 +10,9 @@ public interface IPlayerService {
     List<PlayerDto> getAllPlayers();
     PlayerDto updatePlayer(Long id, PlayerDto dto);
     void deletePlayer(Long id);
+    
+    PlayerDto getPlayerByJerseyNumber(Integer jerseyNumber);
+
 
   
 }

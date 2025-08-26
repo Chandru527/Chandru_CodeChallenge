@@ -107,6 +107,14 @@ public class PlayerServiceImpl implements IPlayerService {
         repo.delete(p);
     }
     
+    @Override
+    public PlayerDto getPlayerByJerseyNumber(Integer jerseyNumber) {
+        Player p = repo.findByJerseyNumber(jerseyNumber)
+                .orElseThrow(() -> new ResourceNotFoundException("Player not found with jersey number " + jerseyNumber));
+        return mapToDto(p);
+    }
+
+    
     
     
 }

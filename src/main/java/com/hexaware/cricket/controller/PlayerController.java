@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/players")
 public class PlayerController {
@@ -37,7 +38,7 @@ public class PlayerController {
     }
 
     @PutMapping("/update/{playerId}")
-    public PlayerDto updatePlayer(@PathVariable Long playerId, @RequestBody PlayerDto dto) {
+    public PlayerDto updatePlayer(@PathVariable Long playerId, @Valid  @RequestBody PlayerDto dto) {
         return service.updatePlayer(playerId, dto);
     }
 
@@ -47,6 +48,12 @@ public class PlayerController {
         service.deletePlayer(playerId);
        
     }
+    
+    @GetMapping("/getplayerbyjersey/{jerseyNumber}")
+    public PlayerDto getPlayerByJerseyNumber(@PathVariable Integer jerseyNumber) {
+        return service.getPlayerByJerseyNumber(jerseyNumber);
+    }
+
     
 
     

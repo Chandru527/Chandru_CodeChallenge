@@ -18,8 +18,10 @@ public class PlayerDto {
     private Integer jerseyNumber;
 
     @NotBlank(message = "Role is required")
-	@Pattern(regexp = "Batsman|Bowler|Wicketkeeper|All Rounder", message = "Role must be Batsman, Bowler, Wicketkeeper, or All Rounder")
+    @Pattern(regexp = "^(Batsman|Bowler|Wicketkeeper|All Rounder)$",message = "Role must be Batsman, Bowler, Wicketkeeper, or All Rounder")
     private String role;
+
+   
 
     @NotNull(message = "Total matches is required")
     @Min(value = 0, message = "Total matches cannot be negative")
